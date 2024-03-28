@@ -19,7 +19,7 @@
     },
     "windows": [
       {
-        "title": "clipboardshared-tauri",
+        "title": "ClipboardShared",
         "width": 800,
         "height": 600
       }
