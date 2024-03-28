@@ -15,7 +15,11 @@ import Greet from "./components/Greet.vue";
     </div>
 
     <Greet />
+    <div>
+      <p>{{ clipboardText }}</p>
+    </div>
   </div>
+  
 </template>
 
 <style scoped>
@@ -27,3 +31,29 @@ import Greet from "./components/Greet.vue";
   filter: drop-shadow(0 0 2em #249b73);
 }
 </style>
+
+<script>
+import { defineComponent } from 'vue';
+import { readText } from '@tauri-apps/api/clipboard';
+
+export default defineComponent({
+  data() {
+    return {
+      clipboardText: ''
+    };
+  },
+  mounted() {
+    this.readClipboard();
+  },
+  methods: {
+    async readClipboard() {
+      try {
+        // 读取剪贴板中的文本
+        this.clipboardText = await readText();
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+  }
+});
+</script>
