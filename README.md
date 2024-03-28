@@ -1,1 +1,1 @@
-# ClipboardShared of Tauri + Vue 3
+# ClipboardShared for Windows and Mac.
