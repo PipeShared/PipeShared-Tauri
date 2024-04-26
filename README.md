@@ -1,1 +1,1 @@
-# ClipboardShared for Windows and Mac.
+# PipeShared for Windows and Mac.
